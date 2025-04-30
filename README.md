@@ -1,4 +1,4 @@
-Certainly! Here's the updated **README.md** with the example training loop removed:
+Ah, I see! You want the README to list the required dependencies directly rather than using `requirements.txt`. Here's the updated **README.md** with the dependencies listed explicitly:
 
 ---
 
@@ -17,15 +17,18 @@ The code combines both **training** and **generation** functionality in a single
 
 ## 📋 Requirements
 
-- Python 3.x
-- PyTorch
-- `torchvision`
-- Other dependencies in `requirements.txt`
+To run this project, you will need to install the following Python libraries:
 
-You can install the required dependencies using the following command:
+- Python 3.x
+- **PyTorch** (for building and training the model)
+- **NumPy** (for handling numerical operations)
+- **TQDM** (for progress bar during training)
+- **Torchvision** (optional, but sometimes needed in conjunction with PyTorch)
+
+To install these dependencies, use the following command:
 
 ```bash
-pip install -r requirements.txt
+pip install torch numpy tqdm torchvision
 ```
 
 ## 🔧 Installation
@@ -37,10 +40,10 @@ git clone https://github.com/yourusername/smiles-generation-transformer.git
 cd smiles-generation-transformer
 ```
 
-Install the necessary packages:
+Then, install the necessary packages:
 
 ```bash
-pip install -r requirements.txt
+pip install torch numpy tqdm torchvision
 ```
 
 ## 🧑‍💻 Usage
@@ -94,24 +97,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ### Additional Notes:
 - **Dataset Format**: Each line in the dataset should contain a single SMILES string.
 - **Generated SMILES**: The model generates SMILES sequences, starting from a special "SOS" token and ending at the "EOS" token.
-
----
-
-### File Structure:
-```
-/smiles-generation-transformer
-  ├── README.md           # <-- Add the README here
-  ├── smiles_train.txt    # Your SMILES dataset
-  ├── main.py             # Script for training and generating SMILES
-  ├── model.py            # Model code
-  ├── requirements.txt    # Python dependencies
-  ├── ...                 # Other files and folders
-```
-
----
-
-### Key Changes:
-- The **`README.md`** no longer includes the example code for the training loop, but the instructions for training and generating are still provided.
-- You only need to run **one command** (`python main.py`) to both train and generate SMILES.
-
-Let me know if this is good to go or if you'd like any further changes!
