@@ -154,7 +154,7 @@ if __name__ == "__main__":
 
             batch_loss.append(loss.item())
 
-        avg_loss = sum(l) / len(l)
+        avg_loss = sum(batch_loss) / len(batch_loss)
         print(f"Epoch {epoch+1} Loss: {avg_loss:.5f}")
         losses.append(avg_loss)
         
