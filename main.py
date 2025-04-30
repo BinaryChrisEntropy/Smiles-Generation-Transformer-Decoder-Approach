@@ -138,7 +138,7 @@ if __name__ == "__main__":
             x = x.to(device)
             pad_mask = pad_mask.to(device)
 
-            x_in = x[:, :-1]
+            x_in = x[:, :-1] 
             y = x[:, 1:]
             pad_in = pad_mask[:, :-1]
 
