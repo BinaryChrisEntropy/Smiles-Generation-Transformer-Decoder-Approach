@@ -1,4 +1,4 @@
-Thank you for sharing the code! Based on it, here is a **custom README** for your **SMILES Generation Transformer Decoder** project:
+Certainly! Here's the updated **README.md** with the example training loop removed:
 
 ---
 
@@ -6,12 +6,14 @@ Thank you for sharing the code! Based on it, here is a **custom README** for you
 
 This project implements a **SMILES generation model** using a **Transformer Decoder** architecture. The model is trained to generate **SMILES (Simplified Molecular Input Line Entry System)** strings, which are text representations of molecular structures, useful in cheminformatics and drug discovery.
 
+The code combines both **training** and **generation** functionality in a single script (`main.py`), allowing you to train the model and generate SMILES strings in one flow.
+
 ## 🚀 Features
 
 - **Transformer Decoder Model**: The core model leverages a Transformer architecture, using the decoder-only setup to generate SMILES sequences.
 - **SMILES Generation**: Generates SMILES strings from a trained model, given a starting token.
-- **Training & Generation**: Includes training scripts and a generation function for SMILES sequences.
 - **Tokenizer**: Built-in dictionary for encoding SMILES strings into numerical tokens.
+- **Training and Generation**: Both training the model and generating SMILES are handled in the `main.py` script.
 
 ## 📋 Requirements
 
@@ -43,27 +45,18 @@ pip install -r requirements.txt
 
 ## 🧑‍💻 Usage
 
-1. **Prepare Your Dataset**:  
-   The dataset should contain SMILES strings. Make sure the SMILES data file (`smiles_train.txt`) is formatted such that each line contains one SMILES string.
+### 1. Prepare Your Dataset:
+The dataset should contain SMILES strings. Ensure that the SMILES data file (`smiles_train.txt`) is formatted such that each line contains one SMILES string.
 
-2. **Train the Model**:  
-   Use the provided script to train the model. For example, to train the model on your dataset, run:
+### 2. Train and Generate SMILES:
+To train the model and generate SMILES strings, simply run:
 
-   ```bash
-   python train.py
-   ```
+```bash
+python main.py
+```
 
-   You can adjust hyperparameters like the number of epochs, learning rate, and batch size in the code.
-
-3. **Generate SMILES**:  
-   After training, you can generate SMILES sequences using the `generate_smiles()` function. Here’s an example usage within the `train.py` script:
-   
-   ```python
-   generated_smiles = generate_smiles(model, dataset, start_token=dataset.dictionary['SOS'], device=device, k=5)
-   print("Generated SMILES:", generated_smiles[3:])
-   ```
-
-   This will generate SMILES strings starting with the 'SOS' token and continuing until the 'EOS' token is reached.
+### 3. Model Output:
+During training, the model will output generated SMILES sequences after every epoch for evaluation.
 
 ## 🧑‍🔬 Model Architecture
 
@@ -81,7 +74,6 @@ The model is based on a **Transformer Decoder** architecture and includes:
 - `dim_feedforward`: Size of the feedforward layer in the Transformer (default: 1024).
 - `max_seq_length`: Maximum sequence length of SMILES strings (default: 101).
 
-
 ## 🔧 Model Training Details
 
 - **Optimizer**: AdamW
@@ -94,7 +86,7 @@ The model is based on a **Transformer Decoder** architecture and includes:
 Feel free to fork this repository, create issues, and submit pull requests. Contributions and improvements are welcome!
 
 ## 📝 License
-   
+
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
@@ -105,4 +97,21 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-Feel free to adjust any specific details like hyperparameters, file paths, or custom instructions for your setup. Let me know if you'd like more details or modifications!
+### File Structure:
+```
+/smiles-generation-transformer
+  ├── README.md           # <-- Add the README here
+  ├── smiles_train.txt    # Your SMILES dataset
+  ├── main.py             # Script for training and generating SMILES
+  ├── model.py            # Model code
+  ├── requirements.txt    # Python dependencies
+  ├── ...                 # Other files and folders
+```
+
+---
+
+### Key Changes:
+- The **`README.md`** no longer includes the example code for the training loop, but the instructions for training and generating are still provided.
+- You only need to run **one command** (`python main.py`) to both train and generate SMILES.
+
+Let me know if this is good to go or if you'd like any further changes!
