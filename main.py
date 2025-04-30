@@ -144,7 +144,7 @@ if __name__ == "__main__":
             seq_len = x_in.size(1)
             look_mask = torch.triu(torch.full((seq_len, seq_len), float('-inf'), device=device), diagonal=1)
 
-            logits = model(x_in, pad_in, loolsk_mask, device)
+            logits = model(x_in, pad_in, look_mask, device)
             loss = criterion(logits.reshape(-1, logits.size(-1)), y.reshape(-1))
 
             optimizer.zero_grad()
