@@ -1,7 +1,3 @@
-Ah, I see! You want the README to list the required dependencies directly rather than using `requirements.txt`. Here's the updated **README.md** with the dependencies listed explicitly:
-
----
-
 # SMILES Generation with Transformer Decoder
 
 This project implements a **SMILES generation model** using a **Transformer Decoder** architecture. The model is trained to generate **SMILES (Simplified Molecular Input Line Entry System)** strings, which are text representations of molecular structures, useful in cheminformatics and drug discovery.
